@@ -16,7 +16,7 @@ class Container {
       error.code === "ENOENT"
         ? this.createFile()
         : console.log(
-            `Error Code: ${error.code} | There was an unexpected error when trying to read ${this.filename}`
+            `Error when trying to read the file. | Error Code: ${error.code}`
           );
     }
   }
@@ -37,7 +37,6 @@ class Container {
     try {
       const data = await this.getData();
       const jsonData = JSON.parse(data);
-
       return jsonData.find((product) => product.id === id);
     } catch (error) {
       console.log(
@@ -57,6 +56,7 @@ class Container {
         const index = jsonData.indexOf(objToRemove);
         jsonData.splice(index, 1);
         await fs.promises.writeFile(this.filename, JSON.stringify(jsonData));
+        console.log(`The product with Id ${id} was deleted successfully`);
       } else {
         console.log(`The product with Id ${id} does not exist`);
         return null;
@@ -87,7 +87,7 @@ class Container {
 
   // Declaro el metodo deleteAll para eliminar todos los productos
   async deleteAll() {
-    await fs.promises.writeFile(this.filename, "[]", (error) => {
+    await fs.writeFile(this.filename, "[]", (error) => {
       error ? console.log(error) : console.log(`Products deleted`);
     });
   }

@@ -1,32 +1,37 @@
 const Container = require("./container.js");
-console.clear();
-
 const products = new Container("products.txt");
 
-// Test metodo save
+const test = async () => {
+  // Test metodo save
+  const prod1 = await products.save({
+    title: "Keyboard",
+    price: 150,
+    thumbnail: "keyboard.jpg",
+  });
 
-products.save({
-  title: "Keyboard",
-  price: 150,
-  thumbnail: "keyboard.jpg",
-});
+  console.log(`First product Id: ${prod1}`);
 
-products.save({
-  title: "Mouse",
-  price: 50,
-  thumbnail: "mouse.jpg",
-});
+  const prod2 = await products.save({
+    title: "Mouse",
+    price: 50,
+    thumbnail: "mouse.jpg",
+  });
 
-//Test de método getAll
-//products.getAll();
+  console.log(`Second product Id: ${prod2}`);
 
-//Test de método getById
-// products.getById(1);
+  //Test de método getAll
+  const allProds = await products.getAll();
+  console.log(`All products: ${JSON.stringify(allProds)}`);
 
-//Test de método deleteById
-// products.deleteById(2);
+  //Test de método getById
+  const prodById = await products.getById(1);
+  console.log(`Product detalis: ${JSON.stringify(prodById)}`);
 
-//Test de método deleteAll
-// products.deleteAll();
+  //Test de método deleteById
+  await products.deleteById(2);
 
-// products.generateId();
+  //Test de método deleteAll
+  await products.deleteAll();
+};
+
+test();
