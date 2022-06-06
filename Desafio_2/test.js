@@ -28,10 +28,10 @@ const test = async () => {
   console.log(`Product detalis: ${JSON.stringify(prodById)}`);
 
   //Test de método deleteById
-  await products.deleteById(2);
+  //await products.deleteById(2);
 
   //Test de método deleteAll
-  await products.deleteAll();
+  //await products.deleteAll();
 };
 
 test();

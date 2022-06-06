@@ -35,8 +35,7 @@ class Container {
   // Declaro el metodo getById para obtener detalle de producto por Id
   async getById(id) {
     try {
-      const data = await this.getData();
-      const jsonData = JSON.parse(data);
+      const jsonData = await this.getData();
       return jsonData.find((product) => product.id === id);
     } catch (error) {
       console.log(
@@ -48,14 +47,16 @@ class Container {
   // Declaro el metodo deleteById para borrar un producto por Id
   async deleteById(id) {
     try {
-      const data = await this.getData();
-      const jsonData = JSON.parse(data);
+      const jsonData = await this.getData();
       const objToRemove = jsonData.find((product) => product.id === id);
 
       if (objToRemove) {
         const index = jsonData.indexOf(objToRemove);
         jsonData.splice(index, 1);
-        await fs.promises.writeFile(this.filename, JSON.stringify(jsonData));
+        await fs.promises.writeFile(
+          this.filename,
+          JSON.stringify(jsonData, null, 2)
+        );
         console.log(`The product with Id ${id} was deleted successfully`);
       } else {
         console.log(`The product with Id ${id} does not exist`);
@@ -71,13 +72,17 @@ class Container {
   // Declaro el metodo save para guardar un producto
   async save(object) {
     try {
-      const allData = await this.getData();
-      const jsonData = JSON.parse(allData);
+      const jsonData = await this.getData();
 
-      object.id = jsonData.length + 1;
+      object.id =
+        jsonData.length - 1 >= 0 ? jsonData[jsonData.length - 1].id + 1 : 1;
+
       jsonData.push(object);
 
-      await fs.promises.writeFile(this.filename, JSON.stringify(jsonData));
+      await fs.promises.writeFile(
+        this.filename,
+        JSON.stringify(jsonData, null, 2)
+      );
       console.log(`Product saved`);
       return object.id;
     } catch (error) {
@@ -95,13 +100,13 @@ class Container {
   // Declaro el metodo getData para obtener el contenido del archivo
   async getData() {
     const data = await fs.promises.readFile(this.filename, "utf-8");
-    return data;
+    return JSON.parse(data);
   }
 
   // Declaro el metodo getAll para obtener el detalle de todos los productos
   async getAll() {
     const data = await this.getData();
-    return JSON.parse(data);
+    return data;
   }
 }
 
