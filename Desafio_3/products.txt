@@ -1,0 +1,80 @@
+[
+   {
+      "title":"Keyboard",
+      "price":249,
+      "thumbnail":"keyboard.gif",
+      "id":1
+   },
+   {
+      "title":"Computer Mouse",
+      "price":107,
+      "thumbnail":"computer mouse.png",
+      "id":2
+   },
+   {
+      "title":"Graphic Tablet",
+      "price":178,
+      "thumbnail":"graphic tablet.jpg",
+      "id":3
+   },
+   {
+      "title":"Touchscreen",
+      "price":131,
+      "thumbnail":"touchscreen.gif",
+      "id":4
+   },
+   {
+      "title":"Scanner",
+      "price":115,
+      "thumbnail":"scanner.gif",
+      "id":5
+   },
+   {
+      "title":"Barcode Reader",
+      "price":44,
+      "thumbnail":"barcode reader.jpg",
+      "id":6
+   },
+   {
+      "title":"Microphone",
+      "price":66,
+      "thumbnail":"microphone.png",
+      "id":7
+   },
+   {
+      "title":"Webcam",
+      "price":30,
+      "thumbnail":"webcam.jpg",
+      "id":8
+   },
+   {
+      "title":"Joystick",
+      "price":120,
+      "thumbnail":"joystick.png",
+      "id":9
+   },
+   {
+      "title":"Digital Camera",
+      "price":217,
+      "thumbnail":"digital camera.gif",
+      "id":10
+   },
+   {
+      "title":"Printer",
+      "price":239,
+      "thumbnail":"printer.gif",
+      "id":11
+   },
+   {
+      "title":"Projector",
+      "price":179,
+      "thumbnail":"projector.png",
+      "id":12
+   },
+   {
+      "title":"Speaker",
+      "price":223,
+      "thumbnail":"speaker.jpg",
+      "id":13
+   }
+]
