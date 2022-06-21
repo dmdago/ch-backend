@@ -73,7 +73,7 @@ class Products {
     let prod = this.products.find((products) => {
       return products.id == id;
     });
-    if (prod == undefined) return '{error: "Producto no encontrado."}';
+    if (prod == undefined) return { error: "Producto no encontrado." };
 
     return prod;
   }
@@ -81,7 +81,7 @@ class Products {
   // Metodo obtener productos
   get getProducts() {
     if (this.products.length == 0)
-      return '{error: "No hay producto cargados."}';
+      return { error: "No hay producto cargados." };
 
     return this.products;
   }
@@ -103,7 +103,7 @@ class Products {
         return prod;
       }
     });
-    if (index == -1) return '{error: "Producto no encontrado."}';
+    if (index == -1) return { error: "Producto no encontrado." };
 
     return this.products.splice(index, 1)[0];
   }

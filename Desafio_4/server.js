@@ -5,7 +5,7 @@ const router = require("./routes/routes");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/html", express.static(__dirname + "/html"));
+app.use(express.static(__dirname + "/html"));
 
 app.use("/api", router);
 
