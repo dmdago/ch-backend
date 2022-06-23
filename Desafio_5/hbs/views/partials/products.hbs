@@ -1,0 +1,26 @@
+<h2>Vista de productos</h2>
+{{#if products}}
+  <div>
+    <table >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Producto</th>
+          <th>$</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each products}}
+          <tr>
+            <th> {{this.id}} </th>
+            <th> {{this.title}} </th>
+            <th> {{this.price}} </th>
+            <th><img width='100' height='100' src="{{this.thumbnail}}" /></th>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div><br />
+{{/if}}
+    <a href='/'> Cargar Nuevo Producto </a>
