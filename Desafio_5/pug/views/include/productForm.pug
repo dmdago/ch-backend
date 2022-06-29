@@ -1,0 +1,13 @@
+form(action='/productos' method='POST')
+        label(for='title') Nombre:
+        input#title.form-control(type='text' name='title')
+        br
+        label(for='price') $:
+        input#price.form-control(type='text' name='price')
+        br
+        label(for='thumbnail') Thumbnail:
+        input#thumbnail.form-control(type='text' name='thumbnail')
+        br
+        input(type='submit' value='Enviar')
+        br
+        a(href='/productos') Ver Lista de Productos
