@@ -1,0 +1,26 @@
+<h2>Vista de productos</h2>
+<% if (products.length > 0) { %>
+  <div>
+    <table >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Producto</th>
+          <th>$</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+         <% products.forEach(item => { %>
+          <tr>
+            <th><%= item.id %></th>
+            <th><%= item.title %></th>
+            <th><%= item.price %></th>
+            <th><img width='100' height='100' src="<%=item.thumbnail %>" /></th>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+  </div><br />
+  <% } %>
+    <a href='/'> Cargar Nuevo Producto </a>
