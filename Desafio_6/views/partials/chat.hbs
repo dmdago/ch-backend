@@ -1,0 +1,27 @@
+<div id='container' >
+	<h3>Centro de Mensajes</h3>
+    <div style="border-width: 1px;  width: 30%;  border-style: solid;  border-color: black; padding: 10px 10px 10px 10px;">
+	<form>
+		<input
+			type='text'
+			id='author'
+			placeholder='usuario@email.com'
+            required
+		/>
+		<div id='messages'></div>
+		<input
+			type='text'
+			id='text'
+			placeholder='Mensaje'
+            required
+		/><br />
+		<input
+			type='button'
+			value='enviar'
+			id='btn-chat'
+			onclick='addMessages()'
+		/>
+	</form>
+    </div>
+
+</div>
